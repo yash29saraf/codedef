@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block sidebar %}
+<ul>
+	<li><a href="/yourself/">Evaluate Yourself</a></li>
+    <li><a href="/contacts/">Contacts</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<form action="/yourself/" method="POST" enctype="multipart/form-data">{% csrf_token%}
+<ul>
+{{form.as_p}}
+    <!--<div class="md-form">
+        <i class="fa fa-envelope prefix"></i>
+        <input type="text" id="form2" class="form-control">
+        <label for="form2">Your email</label>
+    </div>-->
+</ul>
+
+<input type="submit" name="submit" value="Submit">
+</form>
+{% endblock %}
